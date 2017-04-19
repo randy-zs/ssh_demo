@@ -1,0 +1,23 @@
+1. ssh 搭建
+    Configuration problems: Unable to locate Spring NamespaceHandler for XML schema namespace [http://java.sun.com/xml/ns/javaee]
+
+    web.xml :
+
+    <param-value>
+        # 这块写成　/WEB-INF/* 默认把 web.xml 加载了. web.xml 不能被加载.
+        /WEB-INF/applicationContext.xml
+        /WEB-INF/spring-servlet.xml
+    </param-value>
+
+2. web.xml 文件里面的配置 位置　不能随便移动.
+3. springMvc 这个项目的目录结构 aop :
+    (这两个都可以.)
+    <aop:pointcut id="txPointcut" expression="execution(* com.springmvc.service..*.*(..))"/>
+    <!-- <aop:pointcut id="txPointcut" expression="execution(* com.springmvc.service.impl..*.*(..))"/> -->
+
+    参考：白话Spring（基础篇）---AOP（execution表达式）
+    url : http://blog.csdn.net/abcd898989/article/details/50809321
+
+4. springMvc pom.xml 文件里面的jar包, 基本上都是必须的, 可能多一两个也无所谓.
+
+5.

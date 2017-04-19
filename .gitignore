@@ -1,0 +1,16 @@
+.idea
+*.iml
+.svn
+
+.project
+.classpath
+.settings
+target
+bin
+*.cfe
+*.cfs
+*.si
+write.lock
+/lucene/
+src/main/webapp/WEB-INF/classes/
+src/main/webapp/WEB-INF/lib/
