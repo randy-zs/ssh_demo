@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>编辑用户</h1>
-<form action="/nanshen/user/updateUser" name="userForm" method="post">
+<form action="/ssh_demo/user/updateUser" name="userForm" method="post">
     <input type="hidden" name="id" value="${user.id }">
     姓名：<input type="text" name="userName" value="${user.userName }">
     年龄：<input type="text" name="age" value="${user.age }">

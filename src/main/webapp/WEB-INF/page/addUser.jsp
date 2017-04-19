@@ -19,7 +19,7 @@
 <script type="text/javascript">
     function addUser() {
         var form = document.forms[0];
-        form.action = "/nanshen/user/addUser";
+        form.action = "/ssh_demo/user/addUser";
         form.method = "post";
         form.submit();
     }

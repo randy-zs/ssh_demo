@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
-    <display-name>nanshen</display-name>
+    <display-name>ssh_demo</display-name>
 
     <!-- web.xml 里面的配置不能随便更换位置, 因为 web.xml 是从上往下走的.  -->
     <!--配置监听器-->
@@ -23,7 +23,7 @@
     </listener>
     <!-- 配置SpringMVC -  Spring MVC 核心配置开始 -->
     <servlet>
-        <servlet-name>nanshen</servlet-name>
+        <servlet-name>ssh_demo</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <!-- 可以通过contextConfigLocation来自定义SpringMVC配置文件的位置，如不指定，则默认在WEB-INF目录下，名称为[<servlet-name>]-servlet.xml，
              此时文件名必须为[<servlet-name>]-servlet.xml，否则会出错-->
@@ -39,7 +39,7 @@
 
     <!-- 拦截设置 -->
     <servlet-mapping>
-        <servlet-name>nanshen</servlet-name>
+        <servlet-name>ssh_demo</servlet-name>
         <!-- 此处可以可以配置成*.do，对应struts的后缀习惯 -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
