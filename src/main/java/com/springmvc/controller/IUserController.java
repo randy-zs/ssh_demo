@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.apache.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -24,12 +25,10 @@ public class IUserController {
     public ModelAndView loginCheck(HttpServletRequest request) {
         logger.info(" # login check start.. ");
         ModelAndView mav = new ModelAndView();
-        System.out.println(iUserDaoImpl.get("user1"));
         mav.setViewName("/successRedis");
         mav.addObject("user1", iUserDaoImpl.get("user1"));
 
         return mav;
-
     }
 
 }
