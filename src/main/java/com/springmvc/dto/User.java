@@ -35,6 +35,17 @@ public class User {
     @Column(length = 32)
     private String sex;
 
+    public User(String keyId, String name, Object o) {
+        super();
+        this.id = id;
+        this.userName = name;
+        this.password = password;
+    }
+
+    public User(){
+
+    }
+
     public String getId() {
         return id;
     }

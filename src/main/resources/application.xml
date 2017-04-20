@@ -39,6 +39,11 @@
         </property>
     </bean>
 
+    <!-- redis 单元测试的时候, 用下面这个 -->
+    <bean id="IUserDaoImpl" class="com.springmvc.dao.impl.IUserDaoImpl" />
+    <bean id="RedisTestServiceImpl" class="com.springmvc.service.impl.RedisTestServiceImpl" />
+
+
     <!-- cache配置 -->
     <bean id="methodCacheInterceptor" class="com.springmvc.redis.cache.MethodCacheInterceptor">
         <property name="redisTemplate" ref="redisTemplate"/>
@@ -49,7 +54,6 @@
         <property name="advice" ref="methodCacheInterceptor"/>
         <property name="pattern" value=".*ServiceImpl.*getTimestamp"/>
     </bean>
-    <bean id="redisTestService" class="com.springmvc.service.impl.RedisTestServiceImpl">
-    </bean>
     <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+
 </beans>
