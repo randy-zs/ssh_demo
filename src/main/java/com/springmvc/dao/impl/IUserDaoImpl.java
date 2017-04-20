@@ -17,6 +17,7 @@ import org.springframework.util.Assert;
 /**
  * Created by randy on 17-4-20.
  */
+@Repository
 public class IUserDaoImpl extends AbstractBaseRedisDao<String, User> implements IUserDao {
 
     /**

@@ -39,7 +39,7 @@
         </property>
     </bean>
 
-    <!-- redis 单元测试的时候, 用下面这个 -->
+    <!-- redis 进行 单元测试的时候, 用下面这个 -->
     <bean id="IUserDaoImpl" class="com.springmvc.dao.impl.IUserDaoImpl" />
     <bean id="RedisTestServiceImpl" class="com.springmvc.service.impl.RedisTestServiceImpl" />
 
