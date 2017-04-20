@@ -1,0 +1,47 @@
+
+1. 配置flume
+
+ vi conf/flume-conf.properties
+     agent.sources = avroSrc
+     agent.channels = memChannel
+     agent.sinks = fileRollSink
+
+     agent.sources.avroSrc.type = avro
+     agent.sources.avroSrc.bind = 0.0.0.0
+     agent.sources.avroSrc.port = 35855
+     agent.sources.avroSrc.channels = memChannel
+
+     agent.channels.memChannel.type = memory
+     agent.channels.memChannel.capacity = 1000
+     agent.channels.memChannel.transactionCapacity = 100
+
+     agent.sinks.fileRollSink.type = file_roll
+     agent.sinks.fileRollSink.sink.directory = /home/kuaikuai/log_data
+     agent.sinks.fileRollSink.sink.rollInterval = 3600
+     agent.sinks.fileRollSink.sink.serializer = text
+     agent.sinks.fileRollSink.sink.serializer.appendNewline = false
+     agent.sinks.fileRollSink.channel = memChannel
+ cp flume-env.sh.template flume-env.sh
+
+
+2. 启动命令
+
+ cd /root/apache-flume-1.5.2-bin/ && ./bin/flume-ng agent --conf conf --conf-file conf/flume-conf.properties --name agent -Dflume.root.logger=DEBUG,console
+
+3. 后台启动
+
+ cd /root/apache-flume-1.5.2-bin/ && ./bin/flume-ng agent --conf conf --conf-file conf/flume-conf.properties --name agent >/dev/null 2>1 &
+
+4.
+
+ 在 log4j.properties 添加 .
+
+    #输出到flume
+    log4j.appender.flume=org.apache.flume.clients.log4jappender.Log4jAppender
+    log4j.appender.flume.hostname = 127.0.0.1
+    log4j.appender.flume.port = 35855
+    log4j.appender.flume.unsafemode = true
+    log4j.appender.flume.layout=org.apache.log4j.PatternLayout
+    log4j.appender.flume.layout.ConversionPattern=[ssh_demo] [%d{yyyy/MM/dd HH:mm:ss:SSS}][%C] %m%n
+
+ 5. 启动项目. ok .
