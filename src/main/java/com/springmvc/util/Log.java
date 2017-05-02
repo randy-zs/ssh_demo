@@ -4,9 +4,9 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 /**
+ * Created by randy on 16-9-19.
+ *
  * LogUtil
- * 
- * @author zhanbiao
  */
 public class Log {
 
